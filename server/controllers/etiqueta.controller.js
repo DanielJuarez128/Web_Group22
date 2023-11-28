@@ -25,8 +25,7 @@ controller.findAll= async(req, res, next)=>{
         const etiquetas = await Etiqueta.find()
         return res.status(200).json({ etiquetas });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
@@ -39,8 +38,7 @@ controller.findOne= async(req, res, next)=>{
         }
         return res.status(200).json({ etiqueta });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
@@ -53,8 +51,7 @@ controller.deleteOne = async(req, res, next)=>{
         }
         return res.status(200).json({ message: "Etiqueta deleted" });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
