@@ -1,4 +1,8 @@
-import { SlSocialFacebook, SlSocialInstagram, SlSocialTwitter } from "react-icons/sl";
+import {
+  SlSocialFacebook,
+  SlSocialInstagram,
+  SlSocialTwitter,
+} from "react-icons/sl";
 
 export const Footer = () => {
   return (
@@ -22,24 +26,23 @@ export const Footer = () => {
         <div className="lg:flex lg:items-center">
           <ul className="lg:flex lg:items-center">
             <li className="lg:ml-6 mt-4 lg:mt-0">
-              <a href="/pages/home" className="text-lg">Inicio</a>
+              <a href="/pages/home" className="text-lg">
+                Inicio
+              </a>
             </li>
             <li className="lg:ml-6 mt-4 lg:mt-0">
-              <a href="/pages/viewProduct" className="text-lg">Artículos</a>
+              <a href="/pages/viewProduct" className="text-lg">
+                Artículos
+              </a>
             </li>
             <li className="lg:ml-6 mt-4 lg:mt-0">
-              <a href="/pages/servicesFeed" className="text-lg">Servicios</a>
-            </li>
-            <li className="lg:ml-6 mt-4 lg:mt-0">
-              <a href="/pages/peFeed" className="text-lg">Emprendimientos</a>
+              <a href="/pages/peFeed" className="text-lg">
+                Emprendimientos
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </footer>
   );
-}
-
-
-
-
+};

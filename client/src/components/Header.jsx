@@ -24,13 +24,11 @@ export const Header = () => {
         <div className="flex justify-between items-center h-24 text-white bg-slate-900">
             <ul className=" hidden md:flex ">
 
-                <li className=" p-14 text-2xl"> <a href="#">INICIO</a> </li>
+                <li className=" p-10 text-2xl"> <a href="#">INICIO</a> </li>
 
-                <li className=" p-14 text-2xl"> <a href="#">ARTICULOS</a> </li>
+                <li className=" p-10 text-2xl"> <a href="#">ARTICULOS</a> </li>
 
-                <li className=" p-14 text-2xl"> <a href="#">SERVICIOS</a> </li>
-
-                <li className=" p-14 text-2xl"> <a href="#">EMPRENDIMIENTOS</a> </li>
+                <li className=" p-10 text-2xl"> <a href="#">EMPRENDIMIENTOS</a> </li>
             </ul>
 
             {/* search bar*/}  
@@ -50,7 +48,7 @@ export const Header = () => {
             
 
             <div onClick={handleNav} className='block md:hidden relative right-24 '>
-                {!nav ? <AiOutlineClose size={1}/> : <AiOutlineMenu size={40} color='white' />}
+                {!nav ? <AiOutlineClose size={1}/> : <AiOutlineMenu size={30} color='white' />}
             </div>
 
             <div className={!nav ? 'fixed left-0 top-0 w-[40%] h-full border-r border-r-black bg-slate-600 ease-in-out duration-500' :'fixed left-[100%]' }>
@@ -61,11 +59,12 @@ export const Header = () => {
 
                 <li className=" p-4"> <a href="#">INICIO</a> </li>
 
+                <li className=" p-10 text-2xl"> <a href="#">PERFIL</a> </li>
+
                 <li className=" p-4"> <a href="#">ARTICULOS</a> </li>
 
-                <li className=" p-4"> <a href="#">SERVICIOS</a> </li>
-
                 <li className=" p-4"> <a href="#">EMPRENDIMIENTOS</a> </li>
+                
             </ul>
             </div>
 
