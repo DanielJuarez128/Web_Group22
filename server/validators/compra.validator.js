@@ -1,5 +1,4 @@
-const { param } = require("../routes/compra.router");
-
+const { query, body, param } = require("express-validator");
 const validators = {};
 
 validators.createValidator = [
