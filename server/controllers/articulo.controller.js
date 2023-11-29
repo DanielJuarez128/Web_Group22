@@ -22,7 +22,7 @@ controller.saveArt = async(req, res, next)=>{
         articule["lista_deseos"] = lista_deseos;
         articule["precio"] = _precio;
         articule["etiquetas"] = etiqueta;
-        const savedArticulo = (await art.save())
+        const savedArticulo = (await articule.save())
             .populate("usuario", "username correo")
             .populate("etiqueta", "nombre")
             .populate("ofertas", "username correo");
