@@ -5,6 +5,6 @@ const runValidation = require("../validators/index.middleware");
 const { emailValidator } = require("../validators/email.validator");
 const emailController = require("../controllers/email.controller");
 
-router.get("/email", emailValidator, runValidation, emailController.sendMail);
+router.get("/send", emailValidator, runValidation, emailController.sendMail);
 
 module.exports = router;
