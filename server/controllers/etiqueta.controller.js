@@ -15,8 +15,7 @@ controller.create = async(req, res, next)=>{
         await newEtiqueta.save();
         return res.status(201).json({ message: "Etiqueta registered" });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 }
 
