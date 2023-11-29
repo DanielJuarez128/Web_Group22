@@ -7,7 +7,7 @@ const { authentication, authorization } = require("../validators/auth.middleware
 const { createArticuleValidator, disponibilidadValidator, idInParams, paginationValidator } = require("../validators/articule.validator");
 const articuleController = require("../controllers/articulo.controller");
 
-router.post(["/", "/id"], authentication, authorization(ROLES.USER), createArticuleValidator, runValidation, articuleController.saveArt);
+router.post(["/", "/:id"], authentication, authorization(ROLES.USER), createArticuleValidator, runValidation, articuleController.saveArt);
 router.get("/", runValidation, articuleController.findAll);
 router.get("/:id", idInParams, runValidation, articuleController.findOneById);
 router.get("/etiqueta/:id", idInParams, paginationValidator, runValidation, articuleController.findByEtiqueta);

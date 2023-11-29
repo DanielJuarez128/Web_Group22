@@ -1,4 +1,5 @@
-const { query, body, param } = require("express-validator");
+const { body, param, query } = require("express-validator");
+
 const validators = {};
 
 validators.ImgArtValidator = [

@@ -41,7 +41,7 @@ middleware.authentication = async(req, res, next)=>{
     }
 }
 
-middleware.authorization = async(roleRequired = ROLES.SYSADMIN)=>{
+middleware.authorization = (roleRequired = ROLES.SYSADMIN)=>{
     return (req, res, next)=>{
         try {
             const { roles=[] } = req.user;

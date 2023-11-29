@@ -3,8 +3,8 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 // import Login from "./pages/login";
 // import Profile from "./pages/profile";
 // import ModificarPerfil from "./pages/modifProfile";
-// import AddProduct from "./pages/addProduct";
- import ViewProduct from './pages/viewProduct';
+ import AddProduct from "./pages/addProduct";
+// import ViewProduct from './pages/viewProduct';
 // import Feed from "./pages/home";
 
 function App() {
@@ -22,8 +22,8 @@ function App() {
     // <Profile />
     // <ModificarPerfil/>
     // <SignIn/>
-    // <AddProduct />
-     <ViewProduct/>
+     <AddProduct />
+    // <ViewProduct/>
     // <Feed />
   );
 }

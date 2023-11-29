@@ -2,7 +2,7 @@ const Articulo = require("../models/articulo.model");
 
 const controller = {};
 
-controller.saveArt = async(req, res, next)=>{
+controller.saveArt = async (req, res, next)=>{
     try {
         const { nombre, descripcion, lista_deseos, precio, etiqueta } =req.body;
         const { id } = req.params;

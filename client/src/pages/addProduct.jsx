@@ -1,14 +1,64 @@
 import { VscDiffAdded } from "react-icons/vsc";
-import React from "react";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+
+import React, { useState } from "react";
+import moduleName from "module";
+//import { validateForm } from "server/validators";
+
+const NewPost = () => {
+  const initialFormData = {
+    nombre: "",
+    descripcion: "",
+    lista_deseos: "",
+    precio: 0,
+    etiqueta: "",
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const [showErrorConfirmation, setShowErrorConfirmation] = useState(false);
+  const [errorMessages, setErrorMessages] = useState([]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const validationErrors = validateForm(formData);
+    setErrorMessages([]);
+
+    if (validationErrors.length > 0) {
+      setErrorMessages(validationErrors);
+      return;
+    }
+
+    try {
+      await newPost(formData);
+      setShowConfirmation(true);
+      setFormData(initialFormData);
+    } catch (error) {
+      setErrorMessages([error.message]);
+      setShowErrorConfirmation(true);
+    }
+  };
+
+  const closeConfirmation = () => {
+    setShowConfirmation(false);
+  };
+
+  const closeErrorConfirmation = () => {
+    setShowErrorConfirmation(false);
+  };
+};
 
 function AddProduct() {
   return (
-    <div className="m-4">
+    <div>
+      <Header></Header>
       <div className=" p-10 rounded-xl authButtons flex flex-col items-center justify-center ">
         <h1 className="text-2xl font-semibold text-white m-5 p-5 text-center">
           Nuevo artículo en venta
         </h1>
-        <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center ">
+        <form className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center ">
           <div className="flex flex-wrap align-items-center p-3 ">
             <h3 className="text-lg font-bold text-white text-center p-3">
               Nombre del artículo:{" "}
@@ -72,8 +122,9 @@ function AddProduct() {
               Cancelar
             </button>
           </div>
-        </div>
+        </form>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
