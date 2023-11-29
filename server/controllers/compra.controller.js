@@ -19,8 +19,7 @@ controller.saveCompra = async(req, res, next)=>{
         }
         return res.status(201).json( savedVenta );
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
@@ -33,8 +32,7 @@ controller.findOne= async(req, res, next)=>{
         }
         return res.status(200).json({ compra });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
@@ -51,8 +49,7 @@ controller.findByUser= async(req, res, next)=>{
             count: pagination ? await Comprar.countDocuments({hidden: false}): undefined
         });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
@@ -65,8 +62,7 @@ controller.deleteOne = async(req, res, next)=>{
         }
         return res.status(200).json({ message: "Etiqueta deleted" });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 

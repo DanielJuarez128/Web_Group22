@@ -22,4 +22,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // API Router
 app.use("/api/v1", apiRouter);
 
+// Error Handler
+app.use((error, req, res, next)=>{
+    console.error(error);
+    return res.status(500).json({error: "Internal Server Error"});
+})
+
 module.exports = app;
