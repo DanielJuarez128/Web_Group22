@@ -25,3 +25,4 @@ controllers.sendMail =  async(req, res, next) => {
     }
 };
 
+module.exports = controllers;
