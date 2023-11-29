@@ -9,7 +9,7 @@ const compraRouter = require("./compra.router")
 
 router.use("/auth", authRouter);
 router.use("/articule", articuleRouter);
-router.use("/Imagen", imgRouter);
+router.use("/imagen", imgRouter);
 router.use("/etiqueta", etiquetaRouter);
 router.use("/compras", compraRouter);
 

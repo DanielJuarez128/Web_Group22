@@ -20,8 +20,7 @@ controller.register = async(req, res, next)=>{
         await newUser.save();
         return res.status(201).json({ message: "User registered" });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
@@ -48,8 +47,7 @@ controller.login= async(req, res, next)=>{
         await user.save();
         return res.status(200).json({ token });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 }
 
@@ -58,8 +56,7 @@ controller.aboutMe = async(req, res, next)=>{
         const { _id , username, correo, roles, profile_pic, reputacion }= req.user;
         return res.status(200).json({ _id , username, correo, roles, profile_pic, reputacion});
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
@@ -74,8 +71,7 @@ controller.findOneUser = async(req, res, next)=>{
         };
         return res.status(200).json({ user });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
@@ -93,8 +89,7 @@ controller.findAll = async(req, res, next)=>{
             count: pagination ? await User.countDocuments({hidden: false}): undefined
         });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
@@ -102,7 +97,7 @@ controller.updateUser = async(req, res, next)=>{
     try {
         const { _id }= req.user;
         const { username, picture, desc} = req.body;
-        const updatedUser = await User.findByIdAndUpdate( _id, {
+        const updatedUser = (await User.findByIdAndUpdate( _id, {
             username: username,
             profile_pic: picture,
             desc: desc
@@ -114,8 +109,7 @@ controller.updateUser = async(req, res, next)=>{
         }
         return res.status(200).json({ message: "User updated", user: updatedUser });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
@@ -136,8 +130,7 @@ controller.changePassword = async(req, res, next)=>{
         }
         return res.status(200).json({ message: "User password updated" });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 }
 
@@ -183,8 +176,7 @@ controller.changeReputation= async(req, res, next)=>{
         }
         return res.status(200).json({ message: "User reputation updated", user: updatedUser });
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Internal Server Error"});
+        next(error);
     }
 };
 
