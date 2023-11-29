@@ -1,4 +1,4 @@
-const { body, param } = require("express-validator");
+const { query, body, param } = require("express-validator");
 
 const validators = {};
 const passwordRegexp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,32})/

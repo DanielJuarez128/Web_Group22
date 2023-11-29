@@ -1,5 +1,4 @@
-const { query } = require("express");
-const { body, param } = require("express-validator");
+const { query, body, param } = require("express-validator");
 
 const validators = {};
 
