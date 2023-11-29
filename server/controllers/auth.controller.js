@@ -101,9 +101,9 @@ controller.updateUser = async(req, res, next)=>{
             username: username,
             profile_pic: picture,
             desc: desc
-        }, {new: true})
+        }, {new: true}))
             .populate("reputacion.usuario", "username correo")
-            .populate("reputacion", "recomendacion timestamps");;
+            .populate("reputacion", "recomendacion timestamps");
         if(!updatedUser){
             return res.status(500).json({ error: "User not found"})
         }

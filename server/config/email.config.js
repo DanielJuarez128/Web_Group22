@@ -1,5 +1,4 @@
 const { Nodemailer } = require("nodemailer");
-const debug = require('debug')("app:nodemailer");
 
 const emailuser = process.env.EMAILUSER || 'unishop';
 const emailpass = process.env.EMAILPASS || '';
