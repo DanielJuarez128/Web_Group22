@@ -39,7 +39,7 @@ validators.etiquetaValidator = [
         .notEmpty().withMessage("Etiqueta is required")
         .isArray().withMessage("Etiqueta is array"),
     body("etiqueta.*")
-        .trim
+        .trim()
         .isMongoId().withMessage("Etiqueta is MongoID")
 ]
 

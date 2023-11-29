@@ -97,7 +97,7 @@ controller.updateUser = async(req, res, next)=>{
     try {
         const { _id }= req.user;
         const { username, picture, desc} = req.body;
-        const updatedUser = await User.findByIdAndUpdate( _id, {
+        const updatedUser = (await User.findByIdAndUpdate( _id, {
             username: username,
             profile_pic: picture,
             desc: desc
