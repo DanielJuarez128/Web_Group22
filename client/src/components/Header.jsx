@@ -59,7 +59,7 @@ export const Header = () => {
 
                 <li className=" p-4"> <a href="#">INICIO</a> </li>
 
-                <li className=" p-10 text-2xl"> <a href="#">PERFIL</a> </li>
+                <li className=" p-4 "> <a href="#">PERFIL</a> </li>
 
                 <li className=" p-4"> <a href="#">ARTICULOS</a> </li>
 

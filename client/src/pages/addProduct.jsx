@@ -59,12 +59,15 @@ function AddProduct() {
           Nuevo artículo en venta
         </h1>
         <form className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center ">
+         
           <div className="flex flex-wrap align-items-center p-3 ">
             <h3 className="text-lg font-bold text-white text-center p-3">
               Nombre del artículo:{" "}
             </h3>{" "}
             <input className="bg-slate-300 p-3"></input>
           </div>
+
+
           <div className="flex flex-wrap align-items-center p-3 ">
             <h3 className="text-lg font-bold text-white text-center p-3">
               Descripción:{" "}
@@ -74,12 +77,16 @@ function AddProduct() {
               placeholder="Menciona el estado del producto y sus características"
             ></textarea>
           </div>
+
+
           <div className="flex flex-wrap align-items-center p-3">
             <h3 className="text-lg font-bold text-white text-center p-3">
               Precio:{" "}
             </h3>
             <input className="bg-slate-300 p-3"></input>
           </div>
+
+
           <div className="flex flex-wrap align-items-center p-3">
             <h3 className="text-lg font-bold text-white text-center p-3">
               Imagen referencia:{" "}
@@ -94,6 +101,7 @@ function AddProduct() {
             </button>
           </div>
 
+
           <div className="flex flex-wrap align-items-center p-3">
             <h3 className="text-lg font-bold text-white text-center p-3">
               Etiquetas:{" "}
@@ -104,6 +112,7 @@ function AddProduct() {
               <VscDiffAdded />{" "}
             </button>
           </div>
+
           <div className="p-3 ">
             <h3 className="text-lg font-bold text-white text-center m-3">
               De aceptar trueque, haría intercambio por:{" "}
