@@ -1,9 +1,10 @@
 import { Auth0Provider } from "@auth0/auth0-react";
 import { useAuth0 } from "@auth0/auth0-react";
 import logoCuadrado from "../assets/logoCuadrado.svg";
-//import Button from "../components/Button";
+import { Footer } from "../components/Footer";
 
 import React from "react";
+import { useNavigate } from "react-router";
 
 //creando boton para iniciar sesion
 const LoginButton = () => {
@@ -22,6 +23,12 @@ const LoginButton = () => {
 };
 
 function Login() {
+  const navigate = useNavigate();
+
+  function handleSignIn() {
+    navigate("/signIn");
+  }
+
   return (
     <div className=" h-screen bg-black bg-repeat-y">
       <div className="max-w-md mx-auto  bg-black p-10 mb-4 ">
@@ -63,11 +70,15 @@ function Login() {
           <h3 className="text-lg font-bold text-white text-center">
             ¿Aún no tienes una cuenta?
           </h3>
-          <button className="bg-indigo-500 px-3 py-3 text-white font-bold rounded-lg m-2 self-center justify-center hover:bg-indigo-600">
+          <button
+            className="bg-indigo-500 px-3 py-3 text-white font-bold rounded-lg m-2 self-center justify-center hover:bg-indigo-600"
+            onClick={handleSignIn}
+          >
             Registrate ahora
           </button>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }

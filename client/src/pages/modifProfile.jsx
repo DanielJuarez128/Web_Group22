@@ -3,9 +3,17 @@ import { VscThumbsdownFilled } from "react-icons/vsc";
 import { VscCheck } from "react-icons/vsc";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+
 import React from "react";
+import {useNavigate} from 'react-router'
 
 function ModificarPerfil() {
+const navigate = useNavigate();
+
+function handlePerfil(){
+  navigate('/perfil');
+}
+
   return (
     <div>
       <Header></Header>
@@ -42,7 +50,8 @@ function ModificarPerfil() {
               //onChange={(e) => setDescription(e.target.value)}
               //value={description}
             ></textarea>
-            <button className="bg-cyan-700 px-3 py-3 flex flex-wrap text-white font-bold rounded-lg m-2 self-center justify-center items-center hover:bg-cyan-800">
+            <button className="bg-cyan-700 px-3 py-3 flex flex-wrap text-white font-bold rounded-lg m-2 self-center justify-center items-center hover:bg-cyan-800"
+            onClick={handlePerfil}>
               <h3 className="px-3"> Guardar cambios</h3> < VscCheck />
             </button>
           </div>
