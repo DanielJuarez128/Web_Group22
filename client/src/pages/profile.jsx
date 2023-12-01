@@ -5,10 +5,17 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
 import React from "react";
+import { useNavigate } from "react-router";
 
 //rounded-full
 
 function Profile() {
+  const navigate = useNavigate();
+
+  function handleEditProfile() {
+    navigate("/modificarPerfil");
+  }
+
   return (
     <div>
       <Header></Header>
@@ -40,7 +47,10 @@ function Profile() {
               Información de contacto
             </h2>
             <p className="p-5">aqui iría la info que el usuario ingrese </p>
-            <button className="bg-cyan-700 px-3 py-3 flex flex-wrap text-white font-bold rounded-lg m-2 self-center justify-center items-center hover:bg-cyan-800">
+            <button
+              className="bg-cyan-700 px-3 py-3 flex flex-wrap text-white font-bold rounded-lg m-2 self-center justify-center items-center hover:bg-cyan-800"
+              onClick={handleEditProfile}
+            >
               <h3 className="px-3"> Editar</h3>
               <VscEdit />
             </button>
