@@ -29,6 +29,10 @@ function Login() {
     navigate("/signIn");
   }
 
+  function handleFeed() {
+    navigate("/home");
+  }
+
   return (
     <div className=" h-screen bg-black bg-repeat-y">
       <div className="max-w-md mx-auto  bg-black p-10 mb-4 ">
@@ -59,7 +63,10 @@ function Login() {
             // value={title}
             autoFocus
           />
-          <button className="bg-indigo-500 px-3 py-3 text-white font-bold rounded-lg m-2 self-center justify-center mb-4 hover:bg-indigo-600">
+          <button
+            className="bg-indigo-500 px-3 py-3 text-white font-bold rounded-lg m-2 self-center justify-center mb-4 hover:bg-indigo-600"
+            onClick={handleFeed}
+          >
             Iniciar sesión
           </button>
           <h3 className="text-lg font-bold text-white text-center">

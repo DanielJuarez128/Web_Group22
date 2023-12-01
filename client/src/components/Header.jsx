@@ -27,6 +27,10 @@ export const Header = () => {
     navigate("/nuevaVenta");
   }
 
+  function handlePerfilAjeno(){
+    navigate('/verPerfil');
+  }
+
 
 
   return (
@@ -92,7 +96,7 @@ export const Header = () => {
             className={
               !nav
                 ? "fixed left-0 top-0 w-[40%] h-full border-r border-r-black bg-slate-600 ease-in-out duration-500"
-                : "fixed left-[100%]"
+                : "fixed left-[100%]  md: hidden"
             }
           >
             <div
@@ -130,7 +134,7 @@ export const Header = () => {
                 <a href="#">NUEVA PUBLICACION</a>{" "}
               </li>
 
-              <li className=" p-4">
+              <li className=" p-4" onClick={handlePerfilAjeno}>
                 {" "}
                 <a href="#">EMPRENDIMIENTOS</a>{" "}
               </li>

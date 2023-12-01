@@ -5,7 +5,8 @@ import Profile from "./pages/profile";
 import ModificarPerfil from "./pages/modifProfile";
 import AddProduct from "./pages/addProduct";
 import ViewProduct from './pages/viewProduct';
- import Feed from "./pages/home";
+import Feed from "./pages/home";
+import PerfilAjeno from './pages/viewOtherProfile'
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
     //     <Route path="/nuevaVenta" element={<AddProduct />} />
     //     <Route path="/verProducto" element={<ViewProduct />} />
            <Route path="/home" element={<Feed/>}/>
+           <Route path="/verPerfil" element={<PerfilAjeno/>}/>
+
+
     //   </Routes>
     // </BrowserRouter>
   );
