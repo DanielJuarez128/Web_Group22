@@ -2,43 +2,43 @@ import { VscThumbsupFilled } from "react-icons/vsc";
 import { VscThumbsdownFilled } from "react-icons/vsc";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
-
-import gissLogo from "../assets/img/gissLogo.jpg";
-import gb1 from "../assets/img/gb1.jpg";
-import gb2 from "../assets/img/gb2.jpg";
-import gb3 from "../assets/img/gb3.jpg";
-import gb4 from "../assets/img/gb4.jpg";
-import gb5 from "../assets/img/gb5.jpg";
+import gutyLogo from "../assets/img/gutyLogo.jpg";
+import gu1 from "../assets/img/gu1.jpg";
+import gu2 from "../assets/img/gu2.jpg";
+import gu3 from "../assets/img/gu3.jpg";
+import gu4 from "../assets/img/gu4.jpg";
+import gu5 from "../assets/img/gu5.jpg";
 
 import React from "react";
+
 import { useState, useEffect } from "react";
 
 //rounded-full
 
-function PerfilAjeno() {
+function PerfilGuti() {
   const [reputacion, setReputacion] = useState(10000);
 
   return (
     <div>
       <Header></Header>
-      <h1 className="text-2xl font-bold text-white p-10 text-center m-4">
+      <h1 className="text-2xl font-bold text-white p-10 text-center">
         Emprendimiento
       </h1>
-      <div className="p-5 authButtons flex flex-row space-x-6 space-y-6 items-center justify-start ">
+      <div className=" p-5 authButtons flex flex-row space-x-6 space-y-6 items-center justify-start m-4">
         <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center ">
           <h3 className="text-base font-bold text-white text-center">
-            Gisselle Alexandra Aquino Merino
+            Daniel Isaias Juaez Gutierrez
           </h3>
           <div className="rounded-md max-w-md max-h-64 m-3">
             <img
               className="max-w-md max-h-64"
-              src={gissLogo}
+              src={gutyLogo}
               alt="profilepic"
             />
           </div>
 
           <h3 className="text-base font-bold text-white text-center">
-            00377822@uca.edu.sv
+            00012922@uca.edu.sv
           </h3>
           <button className="bg-indigo-500 px-3 py-3 text-white font-bold rounded-lg m-2 self-center justify-center mb-4  hover:bg-indigo-600">
             Contactame
@@ -84,29 +84,27 @@ function PerfilAjeno() {
           </div>
         </div>
 
-        <div className="p-5 authButtons flex flex-wrap rounded-xl space-x-6 space-y-6 items-center justify-center">
+        <div className=" p-5 authButtons flex flex-wrap rounded-xl space-x-6 space-y-6 items-center justify-center">
           <div className="bg-slate-800 p-10 rounded-xl">
-            <img className="max-w-md max-h-64" src={gb1} alt="profilepic" />
+            <img className="max-w-md max-h-64" src={gu1} alt="profilepic" />
           </div>
           <div className="bg-slate-800 p-10 rounded-xl">
-            <img className="max-w-md max-h-64" src={gb2} alt="profilepic" />
+            <img className="max-w-md max-h-64" src={gu2} alt="profilepic" />
           </div>
           <div className="bg-slate-800 p-10 rounded-xl">
-            <img className="max-w-md max-h-64" src={gb3} alt="profilepic" />
+            <img className="max-w-md max-h-64" src={gu3} alt="profilepic" />
           </div>
           <div className="bg-slate-800 p-10 rounded-xl ">
-            <img className="max-w-md max-h-64" src={gb4} alt="profilepic" />
+            <img className="max-w-md max-h-64" src={gu4} alt="profilepic" />
           </div>
           <div className="bg-slate-800 p-10 rounded-xl ">
-            <img className="max-w-md max-h-64" src={gb5} alt="profilepic" />
+            <img className="max-w-md max-h-64" src={gu5} alt="profilepic" />
           </div>
         </div>
-
-
       </div>
       <Footer></Footer>
     </div>
   );
 }
 
-export default PerfilAjeno;
+export default PerfilGuti;

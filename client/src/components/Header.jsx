@@ -28,13 +28,15 @@ export const Header = () => {
     navigate("/nuevaVenta");
   }
 
-  function handlePerfilAjeno() {
-    navigate("/verPerfil");
+  function handleEmprendedores() {
+    navigate("/Emprendimientos");
   }
 
   function handleLogOut() {
     navigate("/");
   }
+
+
 
   return (
     <div className=" mx-auto">
@@ -54,12 +56,12 @@ export const Header = () => {
               <a href="#">INICIO</a>{" "}
             </li>
 
-            <li className=" p-10 text-2xl">
+            <li className=" p-10 text-2xl" onClick={handleFeed}>
               {" "}
               <a href="#">ARTICULOS</a>{" "}
             </li>
 
-            <li className=" p-10 text-2xl">
+            <li className=" p-10 text-2xl" onClick={handleEmprendedores}>
               {" "}
               <a href="#">EMPRENDIMIENTOS</a>{" "}
             </li>
@@ -138,7 +140,7 @@ export const Header = () => {
                 <a href="#">NUEVA PUBLICACION</a>{" "}
               </li>
 
-              <li className=" p-4" onClick={handlePerfilAjeno}>
+              <li className=" p-4" onClick={handleEmprendedores}>
                 {" "}
                 <a href="#">EMPRENDIMIENTOS</a>{" "}
               </li>
