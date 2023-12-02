@@ -84,7 +84,7 @@ function PerfilAjeno() {
           </div>
         </div>
 
-        <div className="p-5 authButtons flex flex-wrap rounded-xl space-x-6 space-y-6 items-center justify-center">
+        <div className="p-5 flex flex-wrap rounded-xl space-x-6 space-y-6 items-center justify-center">
           <div className="bg-slate-800 p-10 rounded-xl">
             <img className="max-w-md max-h-64" src={gb1} alt="profilepic" />
           </div>

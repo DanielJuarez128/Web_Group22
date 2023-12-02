@@ -74,13 +74,16 @@ function PerfilGuti() {
               </h1>{" "}
               <h1 className=" text-base align-items-center p-1">
                 {" "}
-                GissBordados
+                Guty Dseños Gráficos
               </h1>
             </div>
             <h1 className="p-5">
-              @giss_bordados en ig : https://www.instagram.com/giss_bordados/
+              @guty_disennio en ig : https://www.instagram.com/guty_disennio/
             </h1>
-            <h1>~♡ Tienda de artículos de crochet y bordados personalizados</h1>
+            <h1>🇸🇻 Diseño Gráfico Publicitario.</h1>
+            <h1>🎨 Cotizaciones a WhatsApp, Telegram o correo electrónico</h1>
+            <h1>📧 dijguty.disenniografico@gmail.com 📨</h1>
+            <h1>acortar.link/GutyDisennio</h1>
           </div>
         </div>
 

@@ -9,6 +9,7 @@ import Home from "./pages/home";
 import PerfilAjeno from "./pages/viewOtherProfile";
 import PerfilGuti from './pages/guty'
 import FeedEmprendedores from './pages/empFeed'
+import ViewProduct from './pages/viewProduct'
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         <Route path="/verPerfil" element={<PerfilAjeno />} />
         <Route path="/verPerfil2" element={<PerfilGuti />} />
         <Route path="/Emprendimientos" element={<FeedEmprendedores />} />
+        <Route path="/verProducto" element={<ViewProduct/>} />
+
+
       </Routes>
     </BrowserRouter>
   );
