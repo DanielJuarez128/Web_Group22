@@ -13,7 +13,7 @@ function ViewProduct() {
          Libro de Física
         </h1>
         <div className=" p-10 rounded-xl authButtons flex flex-wrap items-center justify-center ">
-          <div className="bg-slate-800 p-10 m-6 authButtons flex flex-col items-center justify-center ">
+          <div className="bg-slate-800 p-10 rounded-lg m-6 authButtons flex flex-col items-center justify-center ">
             <img className="max-h-96" src={searsYserway} />{" "}
           </div>
           <div className="bg-teal-900 p-10 rounded-xl authButtons flex flex-col items-center justify-center ">
