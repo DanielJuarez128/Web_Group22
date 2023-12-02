@@ -1,6 +1,6 @@
 import Logo from "../assets/Logo.svg";
 import Logobuho from "../assets/Logobuho.svg";
-import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import { AiOutlineMenu } from "react-icons/ai";
 
 import { useState } from "react";
 import { useNavigate } from "react-router";
@@ -27,11 +27,13 @@ export const Header = () => {
     navigate("/nuevaVenta");
   }
 
-  function handlePerfilAjeno(){
-    navigate('/verPerfil');
+  function handlePerfilAjeno() {
+    navigate("/verPerfil");
   }
 
-
+  function handleLogOut() {
+    navigate("/");
+  }
 
   return (
     <div className=" mx-auto">
@@ -68,7 +70,7 @@ export const Header = () => {
               <input
                 type="search"
                 placeholder="type here"
-                className=" w-96 p-4 rounded-full bg-slate-800"
+                className=" w-96 p-4 rounded-full bg-slate-800 "
               />
               <button className=" flex absolute right-44 top-1/2 -translate-y-1/2 p-3 bg-slate-500 rounded-full">
                 <CgSearch />
@@ -81,12 +83,13 @@ export const Header = () => {
             ></div>
           </form>
 
+          {/*movile navbar */}
           <div
-            onClick={handleNav}
             className="block md:hidden relative right-24 "
+            onClick={handleNav}
           >
             {!nav ? (
-              <AiOutlineClose size={1} />
+              <AiOutlineMenu size={1} />
             ) : (
               <AiOutlineMenu size={30} color="white" />
             )}
@@ -95,16 +98,16 @@ export const Header = () => {
           <div
             className={
               !nav
-                ? "fixed left-0 top-0 w-[40%] h-full border-r border-r-black bg-slate-600 ease-in-out duration-500"
-                : "fixed left-[100%]  md: hidden"
+                ? "fixed right-0 top-0 w-[40%] h-full border-r border-r-black bg-slate-600 md:hidden ease-in-out duration-500"
+                : "fixed right-[100%]"
             }
           >
             <div
+              className="absolute right-0 rounded-lg bg-red-600 md:hidden"
               onClick={handleNav}
-              className="absolute right-0 rounded-lg bg-red-600"
             >
               {!nav ? (
-                <AiOutlineClose size={30} />
+                <AiOutlineMenu size={30} />
               ) : (
                 <AiOutlineMenu size={20} color="white" />
               )}
@@ -120,7 +123,7 @@ export const Header = () => {
               <li className=" p-4 ">
                 {" "}
                 <a href="#" onClick={handlePerfil}>
-                  PERFIL
+                  MI PERFIL
                 </a>{" "}
               </li>
 
@@ -137,6 +140,13 @@ export const Header = () => {
               <li className=" p-4" onClick={handlePerfilAjeno}>
                 {" "}
                 <a href="#">EMPRENDIMIENTOS</a>{" "}
+              </li>
+
+              <li className=" p-4 ">
+                {" "}
+                <a href="#" onClick={handleLogOut}>
+                  CERRAR SESIÓN
+                </a>{" "}
               </li>
             </ul>
           </div>

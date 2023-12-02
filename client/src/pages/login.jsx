@@ -69,10 +69,10 @@ function Login() {
           >
             Iniciar sesión
           </button>
-          <h3 className="text-lg font-bold text-white text-center">
+          {/* <h3 className="text-lg font-bold text-white text-center">
             También puedes:
           </h3>
-          <LoginButton className="mx-auto" />
+          <LoginButton className="mx-auto" /> */}
 
           <h3 className="text-lg font-bold text-white text-center">
             ¿Aún no tienes una cuenta?
