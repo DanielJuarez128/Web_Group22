@@ -9,7 +9,6 @@ import Home from "./pages/home";
 import PerfilAjeno from "./pages/viewOtherProfile";
 import PerfilGuti from './pages/guty'
 import FeedEmprendedores from './pages/empFeed'
-import ViewProduct from './pages/viewProduct'
 
 function App() {
   return (
