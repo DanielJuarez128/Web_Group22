@@ -1,6 +1,7 @@
 import Logo from "../assets/Logo.svg";
 import Logobuho from "../assets/Logobuho.svg";
 import { AiOutlineMenu } from "react-icons/ai";
+import {AiOutlineClose} from 'react-icons/ai'
 
 import { useState } from "react";
 import { useNavigate } from "react-router";
@@ -100,7 +101,7 @@ export const Header = () => {
           <div
             className={
               !nav
-                ? "fixed right-0 top-0 w-[40%] h-full border-r border-r-black bg-slate-600 md:hidden ease-in-out duration-500"
+                ? "fixed right-0 top-0 w-[40%] h-full border-r border-r-black bg-slate-600 md:hidden ease-out duration-500"
                 : "fixed right-[100%]"
             }
           >
@@ -109,7 +110,7 @@ export const Header = () => {
               onClick={handleNav}
             >
               {!nav ? (
-                <AiOutlineMenu size={30} />
+                <AiOutlineClose size={30} />
               ) : (
                 <AiOutlineMenu size={20} color="white" />
               )}
