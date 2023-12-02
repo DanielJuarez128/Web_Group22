@@ -6,6 +6,7 @@ import {AiOutlineClose} from 'react-icons/ai'
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { CgSearch } from "react-icons/cg";
+import { words } from "../data/filter";
 
 export const Header = () => {
   const [nav, setNav] = useState(false);
@@ -13,6 +14,16 @@ export const Header = () => {
   const handleNav = () => {
     setNav(!nav);
   };
+
+  const [activeSearch, setActiveSearch] = useState([])
+
+  const handleSearch = (e) => {
+    if(e.target.value == ''){
+      setActiveSearch([])
+      return false
+    }
+    setActiveSearch(words.filter(w => w.includes(e.target.value)).slice(0,8))
+  }
 
   const navigate = useNavigate();
 
@@ -73,17 +84,30 @@ export const Header = () => {
               <input
                 type="search"
                 placeholder="type here"
-                className=" w-96 p-4 rounded-full bg-slate-800 "
+                className=" w-96 p-4 rounded-full bg-slate-800 " onChange={(e) => handleSearch(e)}
               />
               <button className=" flex absolute right-44 top-1/2 -translate-y-1/2 p-3 bg-slate-500 rounded-full">
                 <CgSearch />
               </button>
             </div>
 
-            <div
+
+          {
+            activeSearch.length > 0 && (
+              <div
               className="absolute top-20 p-4 bg-slate-800 text-white w-96
-            rounded-xl left-48 -translate-x-1/2 flex flex-col gap-2"
-            ></div>
+            rounded-xl left-48 -translate-x-1/2 flex flex-col gap-2">
+
+              {
+                activeSearch.map(s =>(
+                  // eslint-disable-next-line react/jsx-key
+                  <span>{s}</span>
+                ))
+              }
+              
+            </div>
+            )
+          }
           </form>
 
           {/*movile navbar */}
@@ -157,7 +181,7 @@ export const Header = () => {
           {/*profile pic button*/}
           <div className=" relative hidden md:block">
             <button
-              className="absolute right-8 top-1/2-translate-y-1/2 p-6 bg-black rounded-full"
+              className="relative right-8 top-1/2-translate-y-1/2 p-6 bg-black rounded-full"
               onClick={handlePerfil}
             ></button>
           </div>
