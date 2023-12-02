@@ -2,7 +2,7 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { AiOutlineSmile } from "react-icons/ai";
 
-import searsYserway from '../assets/img/searsYserway.svg'
+import searsYserway from '../assets/img/searsYserway.jpg'
 
 import React from "react";
 

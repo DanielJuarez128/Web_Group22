@@ -4,15 +4,18 @@ import { VscCheck } from "react-icons/vsc";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
+//import user from 'client/src/assets/img/user.jpg'
+
+
 import React from "react";
-import {useNavigate} from 'react-router'
+import { useNavigate } from "react-router";
 
 function ModificarPerfil() {
-const navigate = useNavigate();
+  const navigate = useNavigate();
 
-function handlePerfil(){
-  navigate('/perfil');
-}
+  function handlePerfil() {
+    navigate("/perfil");
+  }
 
   return (
     <div>
@@ -25,7 +28,9 @@ function handlePerfil(){
           <h3 className="text-base font-bold text-white text-center">
             nombre usuario
           </h3>
-          <img></img>
+          <div className="rounded-md max-w-md max-h-64 m-3">
+            {/* <img className="max-w-md max-h-64" src={user} alt="profilepic" /> */}
+          </div>
           <h3 className="text-base font-bold text-white text-center">
             correo usuario
           </h3>
@@ -50,9 +55,11 @@ function handlePerfil(){
               //onChange={(e) => setDescription(e.target.value)}
               //value={description}
             ></textarea>
-            <button className="bg-cyan-700 px-3 py-3 flex flex-wrap text-white font-bold rounded-lg m-2 self-center justify-center items-center hover:bg-cyan-800"
-            onClick={handlePerfil}>
-              <h3 className="px-3"> Guardar cambios</h3> < VscCheck />
+            <button
+              className="bg-cyan-700 px-3 py-3 flex flex-wrap text-white font-bold rounded-lg m-2 self-center justify-center items-center hover:bg-cyan-800"
+              onClick={handlePerfil}
+            >
+              <h3 className="px-3"> Guardar cambios</h3> <VscCheck />
             </button>
           </div>
         </div>

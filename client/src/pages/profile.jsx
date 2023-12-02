@@ -3,6 +3,7 @@ import { VscThumbsdownFilled } from "react-icons/vsc";
 import { VscEdit } from "react-icons/vsc";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import user from '../assets/img/user.jpg'
 
 import React from "react";
 import { useNavigate } from "react-router";
@@ -27,9 +28,13 @@ function Profile() {
           <h3 className="text-base font-bold text-white text-center">
             nombre usuario
           </h3>
-          <img className="circular--square"></img>
+
+          <div className="rounded-md max-w-md max-h-64 m-3">
+            <img className="max-w-md max-h-64" src={user} alt="profilepic" />
+          </div>
+
           <h3 className="text-base font-bold text-white text-center">
-            correo usuario
+            00109822@uca.edu.sv
           </h3>
           <button className="bg-indigo-500 px-3 py-3 text-white font-bold rounded-lg m-2 self-center justify-center mb-4  hover:bg-indigo-600">
             Contactame
@@ -46,7 +51,7 @@ function Profile() {
             <h2 className="text-lg font-bold text-white text-center">
               Información de contacto
             </h2>
-            <p className="p-5">aqui iría la info que el usuario ingrese </p>
+            <p className="p-5">correo institucional: 00109822@uca.edu.sv </p>
             <button
               className="bg-cyan-700 px-3 py-3 flex flex-wrap text-white font-bold rounded-lg m-2 self-center justify-center items-center hover:bg-cyan-800"
               onClick={handleEditProfile}
