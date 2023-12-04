@@ -18,7 +18,8 @@ controller.saveImg = async(req, res, next)=>{
         }
         return res.status(201).json( savedImg );
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 }
 
@@ -35,7 +36,8 @@ controller.findByArt = async(req, res, next)=>{
             count: pagination ? await Articulo.countDocuments({hidden: false}): undefined
         });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 }
 
@@ -49,7 +51,8 @@ controller.deleteOneImagen = async(req, res, next)=>{
         }
         return res.status(200).json({ message: "Imagen deleted" });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 }
 
@@ -62,7 +65,8 @@ controller.deleteAllbyArt = async(req, res, next)=>{
         }
         return res.status(200).json({ imgArt });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 }
 

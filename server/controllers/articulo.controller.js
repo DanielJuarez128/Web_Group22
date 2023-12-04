@@ -22,7 +22,7 @@ controller.saveArt = async (req, res, next)=>{
         articule["lista_deseos"] = lista_deseos;
         articule["precio"] = _precio;
         articule["etiquetas"] = etiqueta;
-        const savedArticulo = (await articule.save())
+        const savedArticulo = (await art.save())
             .populate("usuario", "username correo")
             .populate("etiqueta", "nombre")
             .populate("ofertas", "username correo");
@@ -31,7 +31,8 @@ controller.saveArt = async (req, res, next)=>{
         }
         return res.status(201).json( savedArticulo );
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 
@@ -49,7 +50,8 @@ controller.findAll = async(req, res, next)=>{
             count: pagination ? await Articulo.countDocuments({hidden: false}): undefined
         });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 
@@ -65,7 +67,8 @@ controller.findOneById = async(req, res, next)=>{
         };
         return res.status(200).json({ articule });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 
@@ -84,7 +87,8 @@ controller.findByUser = async (req, res, next)=>{
             count: pagination ? await Articulo.countDocuments({hidden: false}): undefined
         });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 
@@ -103,7 +107,8 @@ controller.findOwn = async (req, res, next)=>{
             count: pagination ? await Articulo.countDocuments({hidden: false}): undefined
         });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 
@@ -122,7 +127,8 @@ controller.findByEtiqueta = async (req, res, next)=>{
             count: pagination ? await Articulo.countDocuments({hidden: false}): undefined
         });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 
@@ -145,7 +151,8 @@ controller.changeHidden= async(req, res, next)=>{
         }
         return res.status(200).json({ message: "Articule updated", articule: updatedArticule });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 
@@ -167,7 +174,8 @@ controller.changeDisponibilidad= async(req, res, next)=>{
         }
         return res.status(200).json({ message: "Articule status updated", user: updatedArt });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 
@@ -193,7 +201,8 @@ controller.offerArticule =  async(req, res, next)=>{
             .populate("ofertas", "username correo");
         return res.status(200).json({ message: "Offer articule successfull", updatedArt});
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 
@@ -213,7 +222,8 @@ controller.findMyOffers = async (req, res, next)=>{
             count: pagination ? await Articulo.countDocuments({hidden: false}): undefined
         });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 
@@ -227,7 +237,8 @@ controller.deleteOneArticle = async(req, res, next)=>{
         }
         return res.status(200).json({ message: "Articule deleted" });
     } catch (error) {
-        next(error);
+        console.error(error);
+        return res.status(500).json({error: "Internal Server Error"});
     }
 };
 

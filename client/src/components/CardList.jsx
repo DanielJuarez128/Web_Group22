@@ -1,4 +1,33 @@
-import CardProduct from "./CardProduct";
+import React from "react";
+
+function CardList() {
+  return (
+    <div>
+      <div className="bg-slate-800 p-10 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+      <div className="bg-slate-800 p-10 mb-4 rounded-xl authButtons flex flex-col items-center justify-center "></div>
+    </div>
+  );
+}
+
+export default CardList;
+
+/*import CardProduct from "./CardProduct";
 
 export const CardList = ({ Articulos }) => {
   return (
@@ -17,5 +46,4 @@ export const CardList = ({ Articulos }) => {
       </ul>
     </div>
   );
-};
-
+}; */
